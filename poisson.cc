@@ -10,6 +10,8 @@ double poisson(double mu, int k) {
 int main() {
     using namespace std;
     
+    ofstream fout("hist.txt"); 
+    
     vector<int> zaehler(11);
 
     ifstream fin("datensumme.txt");
@@ -20,7 +22,8 @@ int main() {
     }
     for (unsigned  int k = 0 ; k < zaehler.size() ; ++k)   
     { 
-      std::cout  << k << ":" << zaehler[k] << std::endl;
+      fout << k << " " << zaehler[k] << std::endl;
     }
-    fin.close();
+
+    fout.close();
 }
