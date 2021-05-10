@@ -1,14 +1,22 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <cmath>
 
 
 double poisson(double mu, int k) {
-  return 0;
+  double exp(double x);
+  double tgamma(double x);
+  double pow(double x, double k);
+  
+  return (pow(mu, k) * exp(-mu))/tgamma(k);
 }
 
 int main() {
     using namespace std;
+    
+    double poisson(double mu, int kk);
+    cout << poisson(3.11538, 234) << std::endl;
     
     ofstream fout("hist.txt"); 
     
