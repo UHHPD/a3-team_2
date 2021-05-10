@@ -15,10 +15,11 @@ double poisson(double mu, int k) {
 int main() {
     using namespace std;
     
-    double poisson(double mu, int kk);
-    cout << poisson(3.11538, 234) << std::endl;
+    double poisson(double mu, int k);
+    
     
     ofstream fout("hist.txt"); 
+    ofstream gout("histpoi.txt");
     
     vector<int> zaehler(11);
 
@@ -31,7 +32,9 @@ int main() {
     for (unsigned  int k = 0 ; k < zaehler.size() ; ++k)   
     { 
       fout << k << " " << zaehler[k] << std::endl;
+      gout << k << " " << zaehler[k] << " " << 234 * poisson(3.11538, k) << std::endl;
     }
 
     fout.close();
+    gout.close();
 }
