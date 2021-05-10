@@ -32,7 +32,7 @@ int main() {
     for (unsigned  int k = 0 ; k < zaehler.size() ; ++k)   
     { 
       fout << k << " " << zaehler[k] << std::endl;
-      gout << k << " " << zaehler[k] << " " << 234 * poisson(3.11538, k) << std::endl;
+      gout << 234 * poisson(3.11538, k) << std::endl;
     }
 
     fout.close();
