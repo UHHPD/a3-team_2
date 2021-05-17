@@ -32,7 +32,8 @@ int main() {
     
     int n_i;
     double log(double a);
-    double mu;
+    double mu; 
+    double likeQ = 1;
 
     for(int i = 0 ; i < 234 ; ++i) {
         fin >> n_i;
@@ -47,7 +48,14 @@ int main() {
       tout << mu << " " << -2*log(prob(daten, mu)) << std::endl;
       sout << mu << " " << (-2*log(prob(daten, mu)) - (-2*log(prob(daten, 3.11538)))) << std::endl;
     }
-    
+
+    for (int l : daten) {
+      likeQ *= poisson(3.11538, l) / poisson(l,l); 
+    }
+
+    cout << -2*log(likeQ) << endl;
+    cout << likeQ << std::endl;
+    cout << (-2*log(likeQ)-233)/sqrt(2*233) << endl;
     fin.close();
     gout.close();
     tout.close();
