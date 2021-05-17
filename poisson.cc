@@ -9,7 +9,7 @@ double poisson(double mu, int k) {
   double tgamma(double x);
   double pow(double x, double k);
   
-  return (pow(mu, k) * exp(-mu))/tgamma(k);
+  return (pow(mu, k) * exp(-mu))/tgamma(k+1);
 }
 
 int main() {
@@ -32,7 +32,7 @@ int main() {
     for (unsigned  int k = 0 ; k < zaehler.size() ; ++k)   
     { 
       fout << k << " " << zaehler[k] << std::endl;
-      gout << k << " " << zaehler[k] << " " << 234 * poisson(3.11538, k+1) << std::endl;
+      gout << k << " " << zaehler[k] << " " << 234 * poisson(3.11538, k) << std::endl;
     }
 
     fout.close();
