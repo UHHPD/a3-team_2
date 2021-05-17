@@ -28,6 +28,7 @@ int main() {
     ifstream fin("datensumme.txt");
     ofstream gout("likelihood.txt");
     ofstream tout("nll.txt");
+    ofstream sout("deltanll.txt");
     
     int n_i;
     double log(double a);
@@ -44,10 +45,11 @@ int main() {
       mu += 0.1; 
       gout << mu << " " << prob(daten, mu) << std::endl;
       tout << mu << " " << -2*log(prob(daten, mu)) << std::endl;
+      sout << mu << " " << (-2*log(prob(daten, mu)) - (-2*log(prob(daten, 3.11538)))) << std::endl;
     }
     
     fin.close();
     gout.close();
     tout.close();
-
+    sout.close();
 }
